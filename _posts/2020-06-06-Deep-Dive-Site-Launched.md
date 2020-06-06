@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Deep Dive Site Launched"
 date: 2020-06-06
 ---
