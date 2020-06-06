@@ -2,7 +2,7 @@
   {% for post in paginator.posts %}
   <article class="post">
     <h1 class="post-title">
-      <a href="{{ site }}{{ post }}">
+      <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
     </h1>
@@ -17,7 +17,7 @@
       {{ post.excerpt | number_of_words }} 
     {% endcapture %}
     {% if excerpt_words != content_words %}
-    <p><a class="btn btn-sm btn-primary" href="{{site}}{{ post }}/#read-more" role="button">Read more <i class="fa fa-arrow-circle-right"></i></a>
+    <p><a class="btn btn-sm btn-primary" href="{{site.baseurl}}{{ post.url }}/#read-more" role="button">Read more <i class="fa fa-arrow-circle-right"></i></a>
     </p>
     {% endif %}
 
@@ -29,12 +29,12 @@
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site. }}">Older</a>
+    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
   {% else %}
     <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site. }}">Newer</a>
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
   {% else %}
     <span class="pagination-item newer">Newer</span>
   {% endif %}
