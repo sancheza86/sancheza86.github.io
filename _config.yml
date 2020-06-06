@@ -1,6 +1,5 @@
 theme: jekyll-theme-dinky
 gems:
-  - jekyll-sitemap
-  - jekyll-paginate
+  jekyll-paginate
   paginate: 4
   
